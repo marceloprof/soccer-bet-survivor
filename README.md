@@ -9,3 +9,15 @@ This is a recreation bet game created to help software developers rookies to mak
 - For each round, the player who has selected a loser team is out of the game.
 - The last player to survive is the winner of the game
 - An important rule is that once the player has selected the team, this team will not be available to this player for the next rounds
+
+#### User
+
+email - password - username
+
+#### League
+
+users - bets
+
+#### Bets
+
+user - team
