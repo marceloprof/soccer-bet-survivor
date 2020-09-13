@@ -1,16 +1,16 @@
 spring:
   profiles: test
   datasource:
-    url: jdbc:mysql://localhost:3306/survivor?createDatabaseIfNotExist=true&useSSL=false
-    driver-class-name: com.mysql.jdbc.Driver
-    username: root
-    password: admin
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
   jpa:
     properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
   liquibase:
-    enabled: false
+    default-schema: survivor
     contexts: test
+    enabled: true
+    drop-first: false
     changeLog: classpath:/db/db.changelog-master.xml
   application:
     name: api-survivor
-
