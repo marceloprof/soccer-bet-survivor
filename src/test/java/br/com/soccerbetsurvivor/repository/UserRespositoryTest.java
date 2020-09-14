@@ -1,17 +1,15 @@
 package br.com.soccerbetsurvivor.repository;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.testcontainers.junit.jupiter.Testcontainers;
 
 import br.com.soccerbetsurvivor.db.container.AbstractTestContainer;
 import br.com.soccerbetsurvivor.model.User;
 
-@RunWith(SpringRunner.class)
+@Testcontainers
 public class UserRespositoryTest extends AbstractTestContainer {
 
     @Autowired
@@ -23,7 +21,7 @@ public class UserRespositoryTest extends AbstractTestContainer {
                 .name("Test").email("email@teste.com.br").build();
         user = userRepository.save(user);
 
-        assertTrue(user.getId() != null);
+       assertEquals(1l, user.getId());
     }
 
 }
