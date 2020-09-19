@@ -1,10 +1,6 @@
 package br.com.soccerbetsurvivor.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,11 +14,13 @@ import lombok.NoArgsConstructor;
 @Entity
 public class User {
 	
-	@Id 
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
-	@SequenceGenerator(name = "user_generator", sequenceName = "seq_user_id", allocationSize = 1)
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Basic(optional = false)
 	private Long id;
+	private String name;
 	private String login;
 	private String password;
+	private String email;
 
 }
