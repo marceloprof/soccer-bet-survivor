@@ -21,3 +21,7 @@ users - bets
 #### Bets
 
 user - team
+
+
+#### External API
+https://www.api-futebol.com.br/documentacao/campeonato
